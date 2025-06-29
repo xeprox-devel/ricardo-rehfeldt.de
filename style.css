@@ -213,25 +213,24 @@ header nav ul li a.nav-link-active {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Sanfter Übergang */
 }
 
-.project-card h3,
-.project-card p,
-.project-card .technologies {
+/* HOVER-EFFEKT */
+.project-card:hover {
+    transform: translateY(-10px); /* Hebt die Karte leicht an */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12); /* Stärkerer Schatten */
+}
+
+.project-details {
     padding: 1.5rem;
+    display: flex; /* NEU: Flexbox aktivieren */
+    flex-direction: column; /* NEU: Elemente untereinander anordnen */
+    flex-grow: 1; /* NEU: Sorgt dafür, dass dieser Container den verfügbaren Platz ausfüllt */
 }
 
-.project-card h3 {
-    margin-top: 0;
-}
-
-.project-card p {
-    flex-grow: 1; /* Wichtig, damit der Button unten bleibt */
-    margin-bottom: 1rem;
-}
-
-.technologies {
-    margin-bottom: 1rem;
+.project-details p {
+    flex-grow: 1; /* NEU: Der Text-Absatz füllt den Raum und schiebt die Tags nach unten */
 }
 
 .technologies span {
@@ -242,6 +241,10 @@ header nav ul li a.nav-link-active {
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     display: inline-block;
+}
+
+.technologies {
+    margin-top: 1.5rem; /* Erzeugt einen deutlichen Abstand zum darüberliegenden Text */
 }
 
 
